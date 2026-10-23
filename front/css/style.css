@@ -1,0 +1,393 @@
+:root {
+    --bg: #f3eadb;
+    --card: #fffaf2;
+    --wine: #6b1f2a;
+    --wine-dark: #521720;
+    --terra: #c0623f;
+    --text: #3a2f2a;
+    --muted: #7a6b60;
+    --border: #e0d2bd;
+    --ok: #2f6b3f;
+    --warn: #9a6a10;
+    --err: #9b2226;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", system-ui, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0 0 .5rem;
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--wine);
+}
+
+a {
+    color: var(--wine);
+}
+
+/* Barra superior e navegação */
+.topbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    background: var(--wine);
+    color: #f6ead7;
+    padding: .75rem 1.5rem;
+}
+
+.brand {
+    color: #f6ead7;
+    text-decoration: none;
+    font-family: Georgia, serif;
+    font-size: 1.35rem;
+    font-weight: bold;
+}
+
+.brand .disc {
+    color: var(--terra);
+}
+
+.topbar nav {
+    display: flex;
+    gap: .25rem;
+    flex-wrap: wrap;
+}
+
+.topbar nav a {
+    color: #f6ead7;
+    text-decoration: none;
+    padding: .4rem .8rem;
+    border-radius: 6px;
+}
+
+.topbar nav a:hover,
+.topbar nav a.active {
+    background: rgba(255, 255, 255, .15);
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+}
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem 3rem;
+}
+
+.page-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin-bottom: 1rem;
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 1px 3px rgba(80, 50, 30, .08);
+}
+
+.grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.grid-form {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.stat .valor {
+    font-size: 2.1rem;
+    font-weight: bold;
+    color: var(--wine);
+    font-family: Georgia, serif;
+}
+
+.stat .rotulo {
+    color: var(--muted);
+    font-size: .9rem;
+}
+
+.stat.alerta .valor {
+    color: var(--terra);
+}
+
+.atalho {
+    display: block;
+    text-decoration: none;
+    color: var(--text);
+    border-left: 5px solid var(--terra);
+}
+
+.atalho:hover {
+    background: #fff3e2;
+}
+
+.atalho strong {
+    display: block;
+    color: var(--wine);
+    font-size: 1.1rem;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    font-size: .9rem;
+    margin-bottom: .25rem;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: .55rem .7rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: #fff;
+    font: inherit;
+    color: var(--text);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid var(--terra);
+    border-color: var(--terra);
+}
+
+.field {
+    margin-bottom: 1rem;
+}
+
+.hint {
+    color: var(--muted);
+    font-size: .85rem;
+    margin-top: .25rem;
+}
+
+.search {
+    max-width: 380px;
+    margin-bottom: 1rem;
+}
+
+/* Botões */
+.btn {
+    display: inline-block;
+    border: 0;
+    border-radius: 8px;
+    padding: .55rem 1rem;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    background: var(--wine);
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: var(--wine-dark);
+}
+
+.btn:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+}
+
+.btn-light {
+    background: rgba(255, 255, 255, .15);
+    color: #f6ead7;
+}
+
+.btn-light:hover {
+    background: rgba(255, 255, 255, .28);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--wine);
+    border: 1px solid var(--wine);
+}
+
+.btn-outline:hover {
+    background: var(--wine);
+    color: #fff;
+}
+
+.btn-danger {
+    background: var(--err);
+}
+
+.btn-small {
+    padding: .3rem .6rem;
+    font-size: .85rem;
+}
+
+.actions {
+    display: flex;
+    gap: .5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+/* Mensagens do sistema */
+.alert {
+    padding: .75rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border: 1px solid;
+    font-size: .95rem;
+}
+
+.alert[hidden] {
+    display: none;
+}
+
+.alert-error {
+    background: #fbe9e7;
+    border-color: #e3a79f;
+    color: var(--err);
+}
+
+.alert-success {
+    background: #e8f3ea;
+    border-color: #a8cfb1;
+    color: var(--ok);
+}
+
+.alert-warning {
+    background: #fdf1d8;
+    border-color: #e6c47a;
+    color: var(--warn);
+}
+
+.alert-info {
+    background: #eef0f4;
+    border-color: #c5cbd6;
+    color: #3d4a60;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: .92rem;
+}
+
+th,
+td {
+    padding: .6rem .7rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+}
+
+th {
+    background: #f1e5d0;
+    color: var(--wine);
+    font-size: .82rem;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+}
+
+tbody tr:hover {
+    background: #fff3e2;
+}
+
+.empty {
+    text-align: center;
+    color: var(--muted);
+    padding: 1.5rem;
+}
+
+.badge {
+    display: inline-block;
+    padding: .1rem .55rem;
+    border-radius: 99px;
+    font-size: .78rem;
+    font-weight: 600;
+}
+
+.badge-ok,
+.badge-in {
+    background: #e8f3ea;
+    color: var(--ok);
+}
+
+.badge-low {
+    background: #fdf1d8;
+    color: var(--warn);
+}
+
+.badge-out {
+    background: #f6e0d6;
+    color: var(--terra);
+}
+
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-box .logo {
+    text-align: center;
+    font-size: 3rem;
+    color: var(--terra);
+    line-height: 1;
+}
+
+.login-box h1 {
+    text-align: center;
+}
+
+.login-box .sub {
+    text-align: center;
+    color: var(--muted);
+    margin-bottom: 1rem;
+}
+
+
+@media (max-width: 600px) {
+    .topbar {
+        padding: .75rem 1rem;
+    }
+
+    .stat .valor {
+        font-size: 1.7rem;
+    }
+}

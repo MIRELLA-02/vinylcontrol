@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Início | Vinyl Control</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  
+<header class="topbar">
+    <a class="brand" href="dashboard.html"><span class="disc">◉</span> Vinyl Control</a>
+    <nav>
+      <a href="dashboard.html" class="active">Início</a>
+      <a href="discos.html">Discos</a>
+      <a href="estoque.html">Estoque e vendas</a>
+    </nav>
+    <div class="user"><span id="nomeUsuario"></span><button id="btnSair" class="btn btn-light" type="button">Sair</button></div>
+  </header>
+  <main>
+    <div class="page-title"><h1>Painel principal</h1></div>
+    <div id="mensagem" class="alert" role="alert" hidden></div>
+    <section class="grid grid-3" aria-label="Indicadores">
+      <div class="card stat"><div class="valor" id="totalTitulos">—</div><div class="rotulo">Títulos cadastrados</div></div>
+      <div class="card stat"><div class="valor" id="totalUnidades">—</div><div class="rotulo">Unidades em estoque</div></div>
+      <div class="card stat alerta"><div class="valor" id="totalBaixo">—</div><div class="rotulo">Títulos no estoque mínimo ou abaixo</div></div>
+    </section>
+    <section class="grid grid-3" aria-label="Atalhos">
+      <a class="card atalho" href="discos.html"><strong>◉ Cadastro de discos</strong>Cadastrar, editar, buscar e excluir discos.</a>
+      <a class="card atalho" href="estoque.html"><strong>⇅ Estoque e vendas</strong>Registrar entradas, saídas e acompanhar o estoque.</a>
+    </section>
+  </main>
+  <script src="js/config.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
